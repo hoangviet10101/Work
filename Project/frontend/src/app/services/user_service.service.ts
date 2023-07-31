@@ -13,4 +13,8 @@ export class UserServiceService {
     return sample_user_data;
   }
 
+  getUserDataBySearchTerm(searchTerm:string) {
+    return this.getAll().filter(UserData => UserData.name.toLowerCase().includes(searchTerm.toLowerCase()))
+  }
+
 }
