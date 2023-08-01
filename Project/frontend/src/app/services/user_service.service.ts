@@ -17,4 +17,8 @@ export class UserServiceService {
     return this.getAll().filter(UserData => UserData.name.toLowerCase().includes(searchTerm.toLowerCase()))
   }
 
+  getUserByID(userIDInput:string):UserData {
+    return this.getAll().find(UserData => UserData.id == userIDInput) ?? new UserData();
+  }
+
 }

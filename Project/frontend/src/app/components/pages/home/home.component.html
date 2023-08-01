@@ -1,7 +1,7 @@
 <app-search></app-search>
 <ul>
     <li *ngFor="let user of user_datas ">
-        <a routerLink="/user/{{user.id}}">
+        <a routerLink="/userData/{{user.id}}">
             <img [src]="user.imageUrl" [alt]="user.name"/>
             <div class="name">
                 {{user.name}}
