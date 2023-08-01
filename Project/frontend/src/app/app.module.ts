@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/partials/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { SearchComponent } from './components/partials/search/search.component';
 import { Test1Component } from './components/pages/test1/test1.component';
+import { NotFoundComponent } from './components/partials/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { Test1Component } from './components/pages/test1/test1.component';
     HeaderComponent,
     HomeComponent,
     SearchComponent,
-    Test1Component
+    Test1Component,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
