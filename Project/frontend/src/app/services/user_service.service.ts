@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { UserData } from '../shared/models/user_data';
 import { sample_user_data } from 'src/data';
 import { HttpClient } from '@angular/common/http';
+import { USER_SEARCH_BY_ID, USER_SEARCH_BY_URL, USER_URL } from '../shared/constants/urls';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,16 +12,16 @@ export class UserServiceService {
 
   constructor(private http:HttpClient) { }
 
-  getAll(): UserData[]{
-    return sample_user_data;
+  getAll(): Observable<UserData[]> {
+    return this.http.get<UserData[]>(USER_URL);
   }
 
   getUserDataBySearchTerm(searchTerm:string) {
-    return this.getAll().filter(UserData => UserData.name.toLowerCase().includes(searchTerm.toLowerCase()))
+    return this.http.get<UserData[]>(USER_SEARCH_BY_URL + searchTerm)
   }
 
-  getUserByID(userIDInput:string):UserData {
-    return this.getAll().find(UserData => UserData.id == userIDInput) ?? new UserData();
+  getUserByID(userIDInput:string):Observable<UserData> {
+    return this.http.get<UserData>(USER_SEARCH_BY_ID + userIDInput);
   }
 
 }

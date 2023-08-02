@@ -9,11 +9,14 @@ import { UserData } from 'src/app/shared/models/user_data';
   styleUrls: ['./test1.component.css']
 })
 export class Test1Component implements OnInit {
-  userData!:UserData;
+  user_data! :UserData;
   constructor(activatedRoute: ActivatedRoute, userService:UserServiceService) {
     activatedRoute.params.subscribe((params) => {
       if (params.id)
-        this.userData = userService.getUserByID(params.id);
+        userService.getUserByID(params.id).subscribe(serverUserData => {
+          this.user_data = serverUserData;
+          console.log(serverUserData)
+        });
     })
   }
 
@@ -21,3 +24,5 @@ export class Test1Component implements OnInit {
   }
 
 }
+
+

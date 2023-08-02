@@ -18,6 +18,12 @@ app.get("/api/user_datas/search/:searchTerm", (req, res) => {
     res.send(user_datas);
 })
 
+app.get("/api/user_datas/:userID", (req, res) => {
+    const userID = req.params.userID;
+    const user_data = sample_user_data.find(userData => userData.id == userID);
+    res.send(user_data);
+})
+
 const port = 5000;
 app.listen(port, () => {
     console.log("Wesite http://localhost:" +port);
