@@ -16,3 +16,20 @@ export const sample_user_data: any[] =[
         imageUrl: 'assets/AmongUs.jpg',
     },
 ]
+
+export const sample_users_login: any[] =[
+    {
+        name: "Viet",
+        id: "1",
+        email: "Viet123@gmail.com",
+        password: "123",
+        isAdmin: true,
+    },
+    {
+        name: "Quan",
+        id:"2",
+        email:"Quan12345@gmail.com",
+        password:"12345",
+        isAdmin: false,
+    }
+]
