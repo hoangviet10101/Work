@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { UserServiceService } from 'src/app/services/data.service';
-import { UserData } from 'src/app/shared/models/user_data';
+import { UserData } from 'src/app/shared/models/data';
 
 @Component({
   selector: 'app-test1',

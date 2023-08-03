@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UserServiceService } from 'src/app/services/data.service';
-import { UserData } from 'src/app/shared/models/user_data';
+import { UserData } from 'src/app/shared/models/data';
 
 @Component({
   selector: 'app-home',
