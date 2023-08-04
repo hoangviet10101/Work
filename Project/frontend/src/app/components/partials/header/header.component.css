@@ -53,12 +53,12 @@ header{
     position:absolute;
     z-index:1;
     background:whitesmoke;
-    display: none;
+    display: none;  
   }
   
   .menu-container:hover .menu{
     display: block;
-  }
+  }  
   
   .menu a{
     width: 100%;

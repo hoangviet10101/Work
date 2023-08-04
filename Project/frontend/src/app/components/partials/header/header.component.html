@@ -1,19 +1,21 @@
+
 <header>
     <div class="container">
-        <a routerLink="/" class="logo">Project</a>
-        <nav>
-            <ul>
-                <li>
-                    <a routerLink="/login">Login</a>
-                </li>
-                <li class="menu_container">
-                    <a routerLink="/dashboard">Viet</a>
-                    <div class="menu">
-                        <a routerLink="/profile">Profile</a>
-                        <a>Log out</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+      <a routerLink="/" class="logo">Project</a>
+      <nav>
+        <ul>
+            <li *ngIf="!isAuth"> 
+            <a routerLink="/login">Login</a>
+          </li>
+          <li *ngIf="isAuth" class="menu-container">
+            <a routerLink="/dashboard">{{user.name}}</a>
+            <div class="menu">
+              <a routerLink="/profile">Pages</a>
+              <a (click)="logOut()">Logout</a>
+            </div>
+          </li>     
+        </ul>
+      </nav>
     </div>
-</header>
+  </header>
+  
