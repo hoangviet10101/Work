@@ -15,7 +15,6 @@ export class Test1Component implements OnInit {
       if (params.id)
         userService.getUserByID(params.id).subscribe(serverUserData => {
           this.user_data = serverUserData;
-          console.log(serverUserData)
         });
     })
   }
