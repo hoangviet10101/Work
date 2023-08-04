@@ -12,6 +12,9 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Document1Component } from './components/pages/document1/document1.component';
+import { Document2Component } from './components/pages/document2/document2.component';
+import { Test2Component } from './components/pages/test2/test2.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SearchComponent,
     Test1Component,
     NotFoundComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    Document1Component,
+    Document2Component,
+    Test2Component
   ],
   imports: [
     BrowserModule,
