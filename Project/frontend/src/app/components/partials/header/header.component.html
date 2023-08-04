@@ -4,16 +4,28 @@
       <a routerLink="/" class="logo">Project</a>
       <nav>
         <ul>
+            <li class="menu-container">
+                <a>Pages</a>
+                <div class="menu">
+                    <a routerLink="/">Home</a>
+                    <a routerLink="/document1">Document1</a>
+                    <a routerLink="/document2">Document2</a>
+                    <a routerLink="/test1">Test1</a>
+                    <a routerLink="/test2">Test2</a>
+                </div>
+            </li>
+            
             <li *ngIf="!isAuth"> 
             <a routerLink="/login">Login</a>
-          </li>
-          <li *ngIf="isAuth" class="menu-container">
-            <a routerLink="/dashboard">{{user.name}}</a>
-            <div class="menu">
-              <a routerLink="/profile">Pages</a>
-              <a (click)="logOut()">Logout</a>
-            </div>
-          </li>     
+            </li>
+            
+            <li *ngIf="isAuth" class="menu-container">
+                <a routerLink="/dashboard">{{user.name}}</a>
+                <div class="menu">
+                <a routerLink="/profile">Pages</a>
+                <a (click)="logOut()">Logout</a>
+                </div>
+            </li>     
         </ul>
       </nav>
     </div>
