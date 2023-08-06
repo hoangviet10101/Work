@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Document1Component } from './components/pages/document1/document1.component';
 import { Document2Component } from './components/pages/document2/document2.component';
 import { Test2Component } from './components/pages/test2/test2.component';
+import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { Test2Component } from './components/pages/test2/test2.component';
     LoginPageComponent,
     Document1Component,
     Document2Component,
-    Test2Component
+    Test2Component,
+    RegisterPageComponent
   ],
   imports: [
     BrowserModule,

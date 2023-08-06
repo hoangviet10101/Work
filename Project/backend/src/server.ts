@@ -2,7 +2,6 @@ import express, { json } from "express";
 import cors from "cors";
 import { sample_user_data, sample_users_login } from "./data";
 import jwt from "jsonwebtoken";
-
 const app = express();
 app.use(express.json())
 app.use(cors({
@@ -35,6 +34,26 @@ app.post("/api/users/login", (req, res) => {
     }else{
         res.status(400).send("Username or password is not correct")
     }
+})
+
+app.post("/api/users/register", (req, res) => {
+    const {name, email, password} = req.body;
+    const user = sample_users_login.find(user => user.email === email)
+
+    if(user) {
+        res.send("User already exist");
+    } else {
+        const newUser:any ={
+            name,
+            id:'',
+            email,
+            password,
+            isAdmin:false
+        }
+        sample_users_login.push(newUser);
+        res.send(generateTokenResponse(newUser));
+    }
+
 })
 
 const generateTokenResponse = (user:any) => {

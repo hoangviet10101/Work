@@ -6,6 +6,7 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
 import { Document1Component } from './components/pages/document1/document1.component';
 import { Document2Component } from './components/pages/document2/document2.component';
 import { Test2Component } from './components/pages/test2/test2.component';
+import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'login', component:LoginPageComponent},
   {path:'pages/document1', component:Document1Component},
   {path:'pages/document2', component:Document2Component},
-  {path:'pages/test2', component:Test2Component}
+  {path:'pages/test2', component:Test2Component},
+  {path:'register', component:RegisterPageComponent}
 ];
 
 @NgModule({
