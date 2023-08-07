@@ -2,6 +2,7 @@ import express, { json } from "express";
 import cors from "cors";
 import { sample_users_login } from "./data-login";
 import { sample_user_data } from "./data-test";
+import { square_data } from "./square-data";
 import jwt from "jsonwebtoken";
 import fs from "fs";
 
@@ -33,6 +34,10 @@ app.get("/api/user_datas/:userID", (req, res) => {
 })
 
 app.post("/api/square", (req, res) => {
+    const {row, column, color} = req.body;
+    
+    fs.writeFileSync("./square-data.ts", `export const square_data = ${JSON.stringify(square_data, null, 3)};\n`);
+    res.send(generateTokenResponseSquare)
 
 })
 
@@ -78,6 +83,18 @@ const generateTokenResponse = (user:any) => {
 
     user.token = token;
     return user
+}
+
+const generateTokenResponseSquare = (square:any) => {
+    const token = jwt.sign({
+        row:square.row,
+        column:square.column,
+        color:square.color
+    },"SomeRandomSquare", {
+        expiresIn:"10d"
+    });
+    square.token = token
+    return square
 }
 
 const port = 5000;

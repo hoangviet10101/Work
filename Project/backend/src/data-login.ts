@@ -33,5 +33,12 @@ export const sample_users_login = [
         "email": "Khang12345@gmail.com",
         "password": "12345",
         "isAdmin": false
+    },
+    {
+        "name": "Thanh123",
+        "id": "",
+        "email": "Thanh123@gmail.com",
+        "password": "123",
+        "isAdmin": false
     }
 ];

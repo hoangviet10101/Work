@@ -1,1 +1,42 @@
-<p>document2 works!</p>
+<div class="container">
+    <div class="details">
+        <form [formGroup]="squareForm" (ngSubmit)="submit()">
+            <div class="input-container">
+                <label>Row</label>
+                <div>
+                    <input type="row" placeholder="Row" formControlName="row"/>
+                </div>
+                <div class="error-list" *ngIf="fc.row.errors && isSubmited">
+                    <div *ngIf="fc.row.errors.required">Should not be empty</div>
+                </div>
+            </div>
+            
+            <div class="input-container">
+                <label>Column</label>
+                <div>
+                    <input type="column" placeholder="Column" formControlName="column"/>
+                </div>
+                <div class="error-list" *ngIf="fc.column.errors && isSubmited">
+                    <div *ngIf="fc.column.errors.required">Should not be empty</div>
+                </div>
+            </div>
+
+            
+
+            <div class="input-container">
+                <label>Color</label>
+                <div>
+                    <input type="color" placeholder="Color" formControlName="color"/>
+                </div>
+                <div class="error-list" *ngIf="fc.color.errors && isSubmited">
+                    <div *ngIf="fc.color.errors.required">Should not be empty</div>
+                </div>
+            </div>
+            <div class="button">
+                <button type="submit">Draw</button>
+            </div>
+        </form>
+
+    </div>
+    <app-square-grid></app-square-grid>
+</div>
