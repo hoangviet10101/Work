@@ -1,7 +1,10 @@
 import express, { json } from "express";
 import cors from "cors";
-import { sample_user_data, sample_users_login } from "./data";
+import { sample_users_login } from "./data-login";
+import { sample_user_data } from "./data-test";
 import jwt from "jsonwebtoken";
+import fs from "fs";
+
 const app = express();
 app.use(express.json())
 app.use(cors({
@@ -11,6 +14,10 @@ app.use(cors({
 
 app.get("/api/user_datas",(req, res) => {
     res.send(sample_user_data);
+})
+
+app.get("/api/user_login_data",(req, res) => {
+    res.send(sample_users_login);
 })
 
 app.get("/api/user_datas/search/:searchTerm", (req, res) => {
@@ -23,6 +30,10 @@ app.get("/api/user_datas/:userID", (req, res) => {
     const userID = req.params.userID;
     const user_data = sample_user_data.find(userData => userData.id == userID);
     res.send(user_data);
+})
+
+app.post("/api/square", (req, res) => {
+
 })
 
 app.post("/api/users/login", (req, res) => {
@@ -51,6 +62,8 @@ app.post("/api/users/register", (req, res) => {
             isAdmin:false
         }
         sample_users_login.push(newUser);
+        fs.writeFileSync("./data-login.ts", `export const sample_users_login = ${JSON.stringify(sample_users_login, null, 4)};\n`);
+
         res.send(generateTokenResponse(newUser));
     }
 
