@@ -16,6 +16,7 @@ import { Document1Component } from './components/pages/document1/document1.compo
 import { Document2Component } from './components/pages/document2/document2.component';
 import { Test2Component } from './components/pages/test2/test2.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
+import { AuthGuardService } from './core/guards/auth-guard.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,7 @@ import { RegisterPageComponent } from './components/pages/register-page/register
       newestOnTop:false
     })
   ],
-  providers: [],
+  providers: [AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

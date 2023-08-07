@@ -7,13 +7,14 @@ import { Document1Component } from './components/pages/document1/document1.compo
 import { Document2Component } from './components/pages/document2/document2.component';
 import { Test2Component } from './components/pages/test2/test2.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
+import { AuthGuardService } from './core/guards/auth-guard.service';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'search/:searchTerm', component:HomeComponent},
   {path:'userData/:id', component:Test1Component},
   {path:'login', component:LoginPageComponent},
-  {path:'pages/document1', component:Document1Component},
+  {path:'pages/document1', component:Document1Component, canActivate: [AuthGuardService]},
   {path:'pages/document2', component:Document2Component},
   {path:'pages/test2', component:Test2Component},
   {path:'register', component:RegisterPageComponent}
