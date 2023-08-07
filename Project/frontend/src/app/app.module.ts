@@ -16,8 +16,6 @@ import { Document1Component } from './components/pages/document1/document1.compo
 import { Document2Component } from './components/pages/document2/document2.component';
 import { Test2Component } from './components/pages/test2/test2.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
-import { SquareGridComponent } from './components/partials/square-grid/square-grid.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +29,6 @@ import { SquareGridComponent } from './components/partials/square-grid/square-gr
     Document2Component,
     Test2Component,
     RegisterPageComponent,
-    SquareGridComponent
   ],
   imports: [
     BrowserModule,

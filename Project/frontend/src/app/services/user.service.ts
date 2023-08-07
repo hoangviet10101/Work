@@ -7,7 +7,6 @@ import { HttpClient } from '@angular/common/http';
 import { USER_LOGIN_URL, USER_REGISTER } from '../shared/constants/urls';
 import { ToastrService } from 'ngx-toastr';
 import { IUserRegister } from '../shared/interfaces/IUserRegister';
-import { ISquare } from '../shared/interfaces/ISquare';
 
 const USER_KEY = 'User';
 @Injectable({

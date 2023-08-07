@@ -18,6 +18,7 @@ export class Document1Component implements OnInit {
       user_login_dataObservable = user_service.getAllUser();
       user_login_dataObservable.subscribe((serverUserData) => {
         this.user_login_data = serverUserData
+        console.log(this.user_login_data)
       })
     })
   }

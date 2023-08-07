@@ -33,11 +33,20 @@ app.get("/api/user_datas/:userID", (req, res) => {
     res.send(user_data);
 })
 
+app.get("/api/square", (req,res) => {
+    res.send(square_data);
+})
+
 app.post("/api/square", (req, res) => {
     const {row, column, color} = req.body;
-    
-    fs.writeFileSync("./square-data.ts", `export const square_data = ${JSON.stringify(square_data, null, 3)};\n`);
-    res.send(generateTokenResponseSquare)
+    const newSquare:any={
+        row,
+        column,
+        color
+    }
+    square_data[0]=newSquare;
+    fs.writeFileSync("./square-data.ts", `export const square_data = ${JSON.stringify(square_data, null, 4)};\n`);
+    res.send(generateTokenResponseSquare(newSquare))
 
 })
 

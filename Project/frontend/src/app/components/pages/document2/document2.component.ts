@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { UserService } from 'src/app/services/user.service';
+import { SquareService } from 'src/app/services/square.service';
+import { ISquare } from 'src/app/shared/interfaces/ISquare';
 import { Square } from 'src/app/shared/models/square';
 
 @Component({
@@ -14,7 +15,7 @@ export class Document2Component implements OnInit {
   squareForm!:FormGroup;
   isSubmited = false;
 
-  constructor(private formBuilder:FormBuilder, private userService: UserService, private activatedRoute:ActivatedRoute, private router:Router) { }
+  constructor(private formBuilder:FormBuilder, private squareService:SquareService, private activatedRoute:ActivatedRoute, private router:Router) { }
 
   ngOnInit(): void {
     this.squareForm = this.formBuilder.group({
@@ -33,8 +34,20 @@ export class Document2Component implements OnInit {
     if (this.squareForm.invalid) {
       return;
     } else {
-      this
+      const fv = this.squareForm.value;
+      const square : ISquare = {
+        row: fv.row,
+        column: fv.column,
+        color: fv.color
+      };
+
+      this.squareService.draw(square).subscribe(_=> {
+        
+      })
+
     }
   }
+
+
 
 }
