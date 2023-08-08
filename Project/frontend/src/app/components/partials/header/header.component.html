@@ -8,8 +8,8 @@
                 <a>Pages</a>
                 <div class="menu">
                     <a routerLink="/">Home</a>
-                    <a routerLink="/pages/document1">Document1</a>
-                    <a routerLink="/pages/document2">Document2</a>
+                    <a *ngIf="isAuth" routerLink="/pages/document1">Document1</a>
+                    <a *ngIf="isAuth" routerLink="/pages/document2">Document2</a>
                     <a *ngIf="isAuth" routerLink="/pages/test2">Test2</a>
                 </div>
             </li>
