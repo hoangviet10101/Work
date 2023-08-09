@@ -5,7 +5,7 @@ export const sample_users_login = [
         "email": "Viet123@gmail.com",
         "password": "123",
         "isAdmin": true,
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlZpZXQxMjNAZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjkxNDYwNDcxLCJleHAiOjE2OTIzMjQ0NzF9.h3gbNZohC-Enye9Tn0sscaxLW8MbAjaFcv08jWtDJ8k"
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlZpZXQxMjNAZ21haWwuY29tIiwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNjkxNTQ1NTQ3LCJleHAiOjE2OTI0MDk1NDd9.FwH8Y3lQhMzsxyaElZiCP_T14x_JETKPm4dXDzt45uE"
     },
     {
         "name": "Quan",
@@ -13,7 +13,7 @@ export const sample_users_login = [
         "email": "Quan12345@gmail.com",
         "password": "12345",
         "isAdmin": false,
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlF1YW4xMjM0NUBnbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjkxNDYwMzk2LCJleHAiOjE2OTIzMjQzOTZ9.JJCfeMBnnvA7YSl37H6wkmPb20grOw4KHSr3HSU6aVU"
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IlF1YW4xMjM0NUBnbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjkxNTQ1NTA2LCJleHAiOjE2OTI0MDk1MDZ9.XvsrD8ER_z3_gs44Z6R8-qZRLJ9yzgoOaat36YaWXy4"
     },
     {
         "name": "Thanh",
@@ -47,6 +47,13 @@ export const sample_users_login = [
         "name": "Viet12345",
         "id": "",
         "email": "Viet12345@gmail.com",
+        "password": "123",
+        "isAdmin": false
+    },
+    {
+        "name": "abcd",
+        "id": "",
+        "email": "abcd123@gmail.com",
         "password": "123",
         "isAdmin": false
     }
